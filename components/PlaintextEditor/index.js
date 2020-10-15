@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import css from './style.css';
+import { indexOf } from 'lodash';
 
 function PlaintextEditor({ file, write }) {
   const [value, setValue] = useState('');
@@ -13,11 +14,17 @@ function PlaintextEditor({ file, write }) {
   }, [file]);
 
   function updateFile() {
-    console.log('file: ', file);
-    // console.log('file: ', file.text());
+    const isPeriod = element => element === '.';
+    let varName = Array.from(file.name);
+    const endName = varName.findIndex(isPeriod);
+    varName = varName.slice(1, endName).join('');
 
-    console.log('updated text: ', value);
-    // write(file);
+    const newFile = new File([value], file.name, {
+      type: file.type,
+      lastModified: new Date()
+    });
+
+    write(newFile);
   }
 
   return (
@@ -28,16 +35,16 @@ function PlaintextEditor({ file, write }) {
         onSubmit={e => {
           e.preventDefault();
           updateFile();
-          write(e.target.text_value.value);
         }}
       >
-        <input
-          type="text"
-          value={value}
+        <textarea
           name="text_value"
+          value={value}
           onChange={e => setValue(e.target.value)}
-          size="50"
+          rows="4"
+          cols="40"
         />
+        <br />
         <button type="submit">Change Text</button>
       </form>
     </div>

@@ -19,6 +19,14 @@ _(disclaimer: I may have gone a bit over the 1 hr limit while writing this readm
 
 ---
 
+## Overtime
+
+_After an additional 20 minutes:_
+
+- The plain text editor works! You can edit the text of a plain text file and save it.
+
+---
+
 ### Learning Already!
 
 _**Confession:** There was a lot in these files that was new to me._ There are some things that are completely new to me and some that I have only recently started to learn about. Working with this code base has already given me an opportunity to learn and grow!
