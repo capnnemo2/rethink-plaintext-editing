@@ -17,7 +17,7 @@ function PlaintextEditor({ file, write }) {
     // console.log('file: ', file.text());
 
     console.log('updated text: ', value);
-    write(file);
+    // write(file);
   }
 
   return (
@@ -28,6 +28,7 @@ function PlaintextEditor({ file, write }) {
         onSubmit={e => {
           e.preventDefault();
           updateFile();
+          write(e.target.text_value.value);
         }}
       >
         <input
