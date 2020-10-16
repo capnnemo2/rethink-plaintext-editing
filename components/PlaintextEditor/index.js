@@ -45,7 +45,7 @@ function PlaintextEditor({ file, write }) {
           cols="40"
         />
         <br />
-        <button type="submit">Change Text</button>
+        <button type="submit">Save</button>
       </form>
     </div>
   );
