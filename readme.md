@@ -38,3 +38,10 @@ I realize that I did not implement very much because I spent most of the hour re
 ## Super Overtime
 
 _No time limit, just playing around to implement additional features._
+
+- Added:
+
+  - A very simple markdown editor
+
+- Still needs:
+  - Update file name
